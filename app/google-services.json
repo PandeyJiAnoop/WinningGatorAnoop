@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "656747731160",
+    "firebase_url": "https://winninggator-a9963-default-rtdb.firebaseio.com",
+    "project_id": "winninggator-a9963",
+    "storage_bucket": "winninggator-a9963.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:656747731160:android:a623d3156b415c2647dfad",
+        "android_client_info": {
+          "package_name": "com.akp.winninggator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "656747731160-k6khq6p789t5eoufi9b5vsahvhh75bj1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.akp.winninggator",
+            "certificate_hash": "1d6b27abb6ad6975654a90aa4154c9529b12c34a"
+          }
+        },
+        {
+          "client_id": "656747731160-1mhsst92t8fkdfv4fuc8jd7ot50htohd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDskochk6ikW2pm-aaKPo2j0z9Pui0GIdg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "656747731160-1mhsst92t8fkdfv4fuc8jd7ot50htohd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

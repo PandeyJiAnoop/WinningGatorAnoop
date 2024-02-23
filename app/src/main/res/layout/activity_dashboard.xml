@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".dashboard">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent" android:id="@+id/appbar"
+        android:layout_height="?android:attr/actionBarSize">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:theme="@style/ToolbarColoredBackArrow">
+            <RelativeLayout
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="WinningGator" android:textStyle="bold"
+                    android:textColor="@color/red"
+                    android:textSize="20dp"
+                    />
+                <RelativeLayout
+                    android:id="@+id/rlWallet"
+                    android:layout_width="130dp"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/shape_box"
+                    android:backgroundTint="#2B2929"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/tvWallet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dp"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:textSize="10dp"
+                        android:text="INR 00.00"
+                        android:textColor="@color/white"/>
+
+                    <pl.droidsonroids.gif.GifImageView
+                        android:layout_width="30dp"
+                        android:layout_toRightOf="@+id/tvWallet"
+                        android:id="@+id/rupeesymbol"
+                        android:src="@drawable/rupee"
+                        android:padding="2dp"
+                        android:layout_height="50dp">
+                    </pl.droidsonroids.gif.GifImageView>
+
+
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_above="@+id/bottomNav"
+        android:layout_below="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <androidx.drawerlayout.widget.DrawerLayout
+            android:id="@+id/drawer_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:openDrawer="start">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:id="@+id/ll_main"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <include layout="@layout/fragment_home"></include>
+<!--                    <FrameLayout-->
+<!--                        android:id="@+id/container"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        app:layout_behavior="@string/appbar_scrolling_view_behavior" />-->
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <com.google.android.material.navigation.NavigationView
+                android:layout_width="wrap_content" android:id="@+id/nav_view"
+                android:layout_height="match_parent"
+                android:layout_gravity="start" android:background="#212121"
+                android:fitsSystemWindows="true">
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+                        <include layout="@layout/profile_header" />
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="8dp"
+                            android:background="@color/colorAquaDark">
+                        </View>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:padding="5dp"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:paddingBottom="@dimen/_5sdp">
+                                <TextView
+                                    android:id="@+id/tv_Dashboard"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="45dp"
+                                    android:clickable="true"
+                                    android:gravity="center_vertical"
+                                    android:layout_gravity="center_vertical"
+                                    android:drawableLeft="@drawable/ic_dashboard"
+                                    android:drawableRight="@android:drawable/ic_media_next"
+
+
+                                    android:drawablePadding="15dp"
+                                    android:drawableTint="@color/white"
+                                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                                    android:text="Dashboard"
+                                    android:textColor="@color/white"
+                                    android:textSize="12dp"
+                                     />
+                                <View android:visibility="gone"
+                                    android:layout_width="match_parent"
+                                    android:background="@color/white"
+                                    android:layout_height="0.1dp">
+
+                                </View>
+                                <TextView android:visibility="gone"
+                                    android:id="@+id/tv_companyProfile"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="45dp"
+                                    android:clickable="true"
+                                    android:gravity="center_vertical"
+                                    android:drawableRight="@android:drawable/ic_media_next"
+
+                                    android:drawableLeft="@drawable/ic_customer"
+                                    android:drawablePadding="15dp"
+                                    android:drawableTint="@color/white"
+                                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                                    android:text="Company Profile"
+                                    android:textColor="@color/white"
+                                    android:textSize="12dp"
+                                     />
+
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:background="@color/white"
+                                    android:layout_height="0.1dp">
+
+                                </View>
+                                <TextView
+                                    android:id="@+id/tv_fundHistory"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="45dp"
+                                    android:clickable="true"
+                                    android:gravity="center_vertical"
+                                    android:drawableRight="@android:drawable/ic_media_next"
+
+                                    android:drawableLeft="@drawable/ic_downline"
+                                    android:drawablePadding="15dp"
+                                    android:drawableTint="@color/white"
+                                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                                    android:text="Fund History"
+                                    android:textColor="@color/white"
+                                    android:textSize="12dp"
+                                    />
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:background="@color/white"
+                                    android:layout_height="0.1dp">
+
+                                </View>
+                                <TextView
+                                    android:id="@+id/tv_withdrawlHistory"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="45dp"
+                                    android:clickable="true"
+                                    android:gravity="center_vertical"
+                                    android:drawableRight="@android:drawable/ic_media_next"
+
+                                    android:drawableLeft="@drawable/ic_downline"
+                                    android:drawablePadding="15dp"
+                                    android:drawableTint="@color/white"
+                                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                                    android:text="Withdraw Request Report"
+                                    android:textColor="@color/white"
+                                    android:textSize="12dp"
+                                    />
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:background="@color/white"
+                                    android:layout_height="0.1dp">
+
+                                </View>
+                                <TextView
+                                    android:id="@+id/tv_Profile"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="45dp"
+                                    android:clickable="true"
+                                    android:gravity="center_vertical"
+                                    android:drawableRight="@android:drawable/ic_media_next"
+                                    android:drawableLeft="@drawable/ic_person"
+                                    android:drawablePadding="15dp"
+                                    android:drawableTint="@color/white"
+                                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                                    android:text="My Profile"
+                                    android:textColor="@color/white"
+                                    android:textSize="12dp"
+                                     />
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:background="@color/white"
+                                    android:layout_height="0.1dp">
+
+                                </View>
+                                <TextView
+                                    android:id="@+id/tv_change_password"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="45dp"
+                                    android:gravity="center_vertical"
+                                    android:drawableRight="@android:drawable/ic_media_next"
+                                    android:clickable="true"
+                                    android:drawableLeft="@drawable/ic_land"
+                                    android:drawablePadding="15dp"
+                                    android:drawableTint="@color/white"
+                                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                                    android:text="Change Password"
+                                    android:textColor="@color/white"
+                                    android:textSize="12dp"
+                                     />
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:background="@color/white"
+                                    android:layout_height="0.1dp">
+
+                                </View>
+                                <TextView
+                                    android:id="@+id/tv_referral"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="45dp"
+                                    android:gravity="center_vertical"
+                                    android:drawableRight="@android:drawable/ic_media_next"
+                                    android:clickable="true"
+                                    android:drawableLeft="@drawable/family_insurance"
+                                    android:drawablePadding="15dp"
+                                    android:drawableTint="@color/white"
+                                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                                    android:text="My Referral Report"
+                                    android:textColor="@color/white"
+                                    android:textSize="12dp"
+                                    />
+
+                                <View
+                                android:layout_width="match_parent"
+                                android:background="@color/white"
+                                android:layout_height="0.1dp">
+
+                            </View>
+                            </LinearLayout>
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="8dp"
+                                android:background="@color/colorAquaDark"></View>
+                            <LinearLayout
+                                android:padding="5dp"
+                                android:layout_width="match_parent"
+                                android:orientation="vertical"
+                                android:layout_height="wrap_content">
+                                <TextView android:id="@+id/referral_tv"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="45dp"
+                                    android:gravity="center_vertical"
+                                    android:drawableRight="@android:drawable/ic_media_next"
+                                    android:clickable="true"
+                                    android:drawableLeft="@android:drawable/ic_menu_share"
+                                    android:drawablePadding="15dp"
+                                    android:drawableTint="@color/white"
+                                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                                    android:text="Refer &amp; Earn"
+                                    android:textColor="@color/white"
+                                    android:textSize="12dp"
+                                     />
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:background="@color/white"
+                                    android:layout_height="0.1dp">
+                                </View>
+
+                                <TextView android:id="@+id/game_limit_tv"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="45dp"
+                                    android:gravity="center_vertical"
+                                    android:drawableRight="@android:drawable/ic_media_next"
+                                    android:clickable="true"
+                                    android:drawableLeft="@drawable/credit_card"
+                                    android:drawablePadding="15dp"
+                                    android:drawableTint="@color/white"
+                                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                                    android:text="Game Limits"
+                                    android:textColor="@color/white"
+                                    android:textSize="12dp"
+                                     />
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:background="@color/white"
+                                    android:layout_height="0.1dp">
+                                </View>
+
+                                <TextView android:id="@+id/game_rule_tv"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="45dp"
+                                    android:gravity="center_vertical"
+                                    android:drawableRight="@android:drawable/ic_media_next"
+                                    android:clickable="true"
+                                    android:drawableLeft="@drawable/debit_credit_card_back"
+                                    android:drawablePadding="15dp"
+                                    android:drawableTint="@color/white"
+                                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                                    android:text="Game Rules"
+                                    android:textColor="@color/white"
+                                    android:textSize="12dp"
+                                     />
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:background="@color/white"
+                                    android:layout_height="0.1dp">
+                                </View>
+                                <TextView
+                                    android:id="@+id/tv_terms"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="45dp"
+                                    android:gravity="center_vertical"
+                                    android:drawableRight="@android:drawable/ic_media_next"
+                                    android:clickable="true"
+                                    android:drawableLeft="@drawable/ic_edit"
+                                    android:drawablePadding="15dp"
+                                    android:drawableTint="@color/white"
+                                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                                    android:text="Terms and Conditions"
+                                    android:textColor="@color/white"
+                                    android:textSize="12dp"
+                                    />
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:background="@color/white"
+                                    android:layout_height="0.1dp">
+                                </View>
+                                <TextView
+                                    android:id="@+id/tv_privacy_policy"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="45dp"
+                                    android:gravity="center_vertical"
+                                    android:drawableRight="@android:drawable/ic_media_next"
+                                    android:clickable="true"
+                                    android:drawableLeft="@drawable/ic_edit"
+                                    android:drawablePadding="15dp"
+                                    android:drawableTint="@color/white"
+                                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                                    android:text="Privacy policy"
+                                    android:textColor="@color/white"
+                                    android:textSize="12dp"
+                                     />
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:background="@color/white"
+                                    android:layout_height="0.1dp">
+                                </View>
+                                <TextView
+                                    android:id="@+id/tv_support"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="45dp"
+                                    android:gravity="center_vertical"
+                                    android:drawableRight="@android:drawable/ic_media_next"
+                                    android:clickable="true"
+                                    android:drawableLeft="@drawable/ic_call"
+                                    android:drawablePadding="15dp"
+                                    android:drawableTint="@color/white"
+                                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                                    android:text="Support Help"
+                                    android:textColor="@color/white"
+                                    android:textSize="12dp"
+                                     />
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:background="@color/white"
+                                    android:layout_height="0.1dp">
+                                </View>
+
+
+
+                                <TextView  android:drawableRight="@android:drawable/ic_media_next"
+                                    android:id="@+id/tv_logout"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="45dp"
+                                    android:gravity="center_vertical"
+                                    android:clickable="true"
+                                    android:drawableLeft="@drawable/ic_logout"
+                                    android:drawablePadding="15dp"
+                                    android:drawableTint="@color/white"
+                                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                                    android:text="Logout"
+                                    android:textColor="@color/white"
+                                    android:textSize="12dp"
+                                     />
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:background="@color/white"
+                                    android:layout_height="0.1dp">
+                                </View>
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </ScrollView>
+            </com.google.android.material.navigation.NavigationView>
+        </androidx.drawerlayout.widget.DrawerLayout>
+    </LinearLayout>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            android:id="@+id/bottomNav"  android:layout_alignParentBottom="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:menu="@menu/menu"
+            app:itemIconTint="@color/bottom_nav_item_selector"
+            app:itemTextColor="@color/bottom_nav_item_selector"
+            app:labelVisibilityMode="labeled"
+
+            />
+
+</RelativeLayout>

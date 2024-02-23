@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.akp.winninggator">
+
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
+        android:exported="true"
+        android:hardwareAccelerated="false"
+        android:icon="@drawable/appicon"
+        android:keepScreenOn="true"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:launchMode="singleTop"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@drawable/appicon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        android:windowSoftInputMode="stateHidden"
+        tools:node="merge">
+        <activity android:name=".CrickbuzzWebview"></activity>
+        <activity android:name=".SlidingMenu.TermsConditions" />
+        <activity android:name=".SlidingMenu.ReferEarnScreen" />
+        <activity android:name="com.akp.Demo" />
+        <activity android:name=".Wallet.WithdrawRequestReport" />
+        <activity android:name=".NotificationList" />
+        <activity android:name=".WinningBetDashboard" />
+        <activity android:name=".SlidingMenu.SupportScreen" />
+        <activity android:name=".SlidingMenu.PrivacyPolicy" />
+        <activity android:name=".SlidingMenu.GameLimitDetails" />
+        <activity android:name=".SlidingMenu.GameRuleDetails" />
+        <activity android:name=".Wallet.ViewWalletHistoryReport" />
+        <activity android:name=".Wallet.FundHistoryReport" />
+        <activity android:name=".Wallet.PaymentPage" />
+        <activity android:name=".Register" />
+        <activity android:name=".Welcome" />
+        <activity
+            android:name=".UtilityServices.UtilityRechargeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CompanyProfile"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".SlidingMenu.ReferralPersonList"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".ChangePassword"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".editprofile"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".user_profile"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".dashboard"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".splashscrn"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> <!-- add in application tag -->
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/crop_Theme" />
+
+        <service android:name=".BackgroundSoundService" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.akp.winninggator.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"
+                tools:node="merge" />
+        </provider>
+    </application>
+
+</manifest>

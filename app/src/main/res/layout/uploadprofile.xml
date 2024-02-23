@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:cardBackgroundColor="#1F2223">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:id="@+id/rlHeader"
+            android:background="#1A2025"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <ImageView
+                android:id="@+id/ivback"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp" android:tint="@color/white"
+                app:srcCompat="@drawable/back"  />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_centerVertical="true"
+                android:layout_height="30dp"
+                android:layout_centerHorizontal="true"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:text="My profile"/>
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tvFinalPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:padding="10dp"
+            android:text="Update your Profile Details"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="@color/Parrotgreen"
+            ></View>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:text="Username"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:layout_marginBottom="3dp"
+            android:textColor="@color/white" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:background="@drawable/shape_rect"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"   app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/grey"
+            android:layout_marginRight="10dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableTint="#CAC4C4"
+                android:drawablePadding="@dimen/_10sdp"
+                android:drawableLeft="@android:drawable/ic_lock_lock"
+                android:hint="Enter User name"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textColorHint="@color/grey" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <!-- Using CardView for CircularImageView -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_marginTop="10dp"
+            android:layout_width="150dp"
+            app:cardBackgroundColor="@color/bluee"
+            android:layout_height="150dp"
+            android:layout_gravity="center_horizontal"
+            app:cardCornerRadius="100dp">
+
+            <!-- add a Image image.png in your Drawable folder -->
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imageView"
+                app:civ_border_width="5dp"
+                app:civ_border_color="@color/colorBlueJeans"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/user" />
+        </androidx.cardview.widget.CardView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_margin="15dp"
+            android:layout_height="50dp">
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:id="@+id/update_rl"
+                android:background="@color/red"
+                android:orientation="horizontal"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/update_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:layout_centerVertical="true"
+                    android:text="Update"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:layout_centerInParent="true"/>
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

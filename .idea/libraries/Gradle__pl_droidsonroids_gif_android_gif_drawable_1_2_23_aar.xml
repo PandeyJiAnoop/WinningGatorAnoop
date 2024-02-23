@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: pl.droidsonroids.gif:android-gif-drawable:1.2.23@aar">
+    <CLASSES>
+      <root url="jar://C:/Program Files/Java/jdk-18.0.2/bin/caches/transforms-3/95260de7f6aabcef9e3fc9189e5e08c9/transformed/jetified-android-gif-drawable-1.2.23/jars/classes.jar!/" />
+      <root url="file://C:/Program Files/Java/jdk-18.0.2/bin/caches/transforms-3/95260de7f6aabcef9e3fc9189e5e08c9/transformed/jetified-android-gif-drawable-1.2.23/res" />
+      <root url="file://C:/Program Files/Java/jdk-18.0.2/bin/caches/transforms-3/95260de7f6aabcef9e3fc9189e5e08c9/transformed/jetified-android-gif-drawable-1.2.23/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

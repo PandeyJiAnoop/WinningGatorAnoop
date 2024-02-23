@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:descendantFocusability="beforeDescendants"
+    android:fitsSystemWindows="true"
+    android:focusableInTouchMode="true">
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize">
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:id="@+id/header1"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:background="@color/Parrotgreen">
+                <ImageView
+                    android:id="@+id/back_img"
+                    android:layout_marginLeft="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_arrow_back" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_toRightOf="@id/back_img"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="15dp"
+                    android:text="Support"
+                    android:textColor="@color/white"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/header">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:orientation="vertical"
+                   android:layout_height="match_parent">
+                   <ImageView android:id="@+id/whatsap_img"
+                       android:padding="15dp"
+                       android:src="@drawable/whatsap_icon"
+                       android:layout_width="match_parent"
+                       android:layout_height="@dimen/_120sdp">
+                   </ImageView>
+                   <ImageView android:padding="15dp"  android:id="@+id/telegram_img"
+                       android:src="@drawable/telegram_icon"
+                       android:layout_width="match_parent"
+                       android:layout_height="@dimen/_120sdp">
+                   </ImageView>
+               </LinearLayout>
+            <LinearLayout android:visibility="gone"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_marginTop="30dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:textAlignment="center"
+                    android:elevation="@dimen/_10sdp"
+                    android:padding="@dimen/_10sdp"
+                    android:text="Write your issue in  Subject and Message with proper explanations Support Team contact you as soon as possible.."
+                    android:textColor="@color/light_green"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp"
+                    app:cardBackgroundColor="@color/Parrotgreen"
+                    android:padding="10dp">
+
+                    <LinearLayout
+                        android:padding="15dp"
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Subject"
+                            android:textSize="15sp"
+                            android:textColor="@color/white"/>
+
+                        <EditText
+                            android:id="@+id/etSubject"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:hint="Enter Subject"
+                            android:textSize="15sp"
+                            android:textColor="@color/white"
+                            android:padding="10dp"
+                            android:layout_marginTop="5dp"
+                            android:maxLines="1"
+                            android:inputType="text"
+
+                            android:background="@drawable/back_edit_text_gray"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Message"
+                            android:textSize="15sp"
+                            android:textColor="@color/white"
+                            android:layout_marginTop="10dp"/>
+
+                        <EditText
+                            android:id="@+id/et_Message"
+                            android:layout_width="match_parent"
+                            android:layout_height="130dp"
+                            android:hint="Enter Message"
+                            android:textSize="15sp"
+                            android:textColor="@color/white"
+                            android:padding="10dp"
+                            android:layout_marginTop="5dp"
+                            android:gravity="start"
+                            android:background="@drawable/back_edit_text_gray"/>
+
+                        <Button
+                            android:id="@+id/btnSubmit"
+                            android:layout_width="@dimen/_150sdp"
+                            android:layout_height="40dp"
+                            android:text="Submit"
+                            android:background="@drawable/back_red"
+                            android:textSize="15sp"
+                            android:textColor="@color/white"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="10dp"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp"
+                            android:layout_marginBottom="0dp"/>
+                    </LinearLayout>
+
+
+
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

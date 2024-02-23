@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:cardElevation="10dp"
+    android:layout_margin="3dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:id="@+id/live_ll"
+        android:padding="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:id="@+id/sr_no"
+            android:layout_width="100dp"
+
+            android:text=""
+            android:gravity="center_vertical"
+
+
+
+            android:textColor="@color/black"
+
+            android:layout_height="match_parent">
+        </TextView>
+        <TextView
+            android:id="@+id/name_tv"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:text=""
+            android:gravity="center_vertical"
+
+
+
+            android:textColor="@color/black"
+
+            android:layout_height="match_parent">
+        </TextView>
+        <TextView
+            android:id="@+id/bbid_tv"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:text=""
+            android:gravity="center_vertical"
+
+
+
+            android:textColor="@color/black"
+
+            android:layout_height="match_parent">
+        </TextView>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:background="@color/grey"
+        android:layout_height="0.5dp">
+    </View>
+</LinearLayout>

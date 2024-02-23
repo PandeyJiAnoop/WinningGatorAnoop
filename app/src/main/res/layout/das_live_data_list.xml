@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:background="#CC1C1B1B" android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:id="@+id/llTwo" android:background="#CC1C1B1B"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvRecord"
+        android:weightSum="4">
+        <ImageView android:src="@drawable/ic_user"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="4dp"
+            android:layout_width="20dp" android:tint="@color/white"
+            android:layout_height="20dp">
+
+        </ImageView>
+        <TextView android:id="@+id/tv1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:padding="5dp"
+            android:text="**9510***"
+            android:textColor="@color/white"
+            android:textSize="11sp"                            android:textStyle="bold" />
+        <TextView android:id="@+id/tv2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="500.00"  android:layout_gravity="center_vertical"
+            android:textColor="@color/white"
+            android:textSize="11sp"                            android:textStyle="bold" />
+        <TextView
+            android:visibility="gone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="Player Type"
+            android:textColor="@color/white"
+            android:textSize="11sp"                            android:textStyle="bold" />
+        <TextView android:id="@+id/tv3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="5dp"  android:layout_gravity="center_vertical"
+            android:text="" android:textSize="11sp"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+        <TextView android:id="@+id/tv4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="5dp" android:textSize="11sp"
+            android:text="500.00 INR"  android:layout_gravity="center_vertical"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:background="@color/grey"
+        android:layout_height="5dp">
+
+    </View>
+</LinearLayout>

@@ -1,0 +1,1165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:orientation="vertical" android:id="@+id/main">
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/orange"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/menuImg"
+            android:layout_width="43dp"
+            android:layout_height="43dp"
+            android:layout_alignParentLeft="true"
+            android:padding="10dp"
+            android:src="@drawable/ic_dashboard"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_header"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Sunrise Tech Pvt. Ltd"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="bold|italic" />
+
+        <ImageView
+            android:id="@+id/img_wallet"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerVertical="true"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="3dp"
+            android:layout_toLeftOf="@+id/iv_notification"
+            android:src="@drawable/ic_account_details"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:id="@+id/iv_notification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/iv_icon"
+                android:layout_width="33dp"
+                android:layout_height="wrap_content"
+                android:paddingTop="3dp"
+                app:srcCompat="@drawable/ic_dashboard"
+                tools:ignore="VectorDrawableCompat" />
+
+            <TextView
+                android:id="@+id/tv_count"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="-11dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="-10dp"
+                android:layout_toRightOf="@+id/iv_icon"
+                android:background="@drawable/ic_account_details"
+                android:backgroundTint="@color/white"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="@color/colorPrimary"
+                android:textSize="9sp" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/iv_logout"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginRight="3dp"
+            android:background="@drawable/ic_logout" />
+
+        <ImageView
+            android:id="@+id/menudot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_dashboard" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:background="@drawable/ic_account_details"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/txt_notify"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginLeft="@dimen/_12sdp"
+                android:layout_marginBottom="3dp"
+                android:gravity="center"
+                android:text="1"
+                android:textColor="#FF1200"
+                android:visibility="gone" />
+        </RelativeLayout>
+    </LinearLayout>
+
+<!--    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout-->
+<!--        android:id="@+id/srl_refresh"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <RelativeLayout android:orientation="vertical"
+                    android:layout_width="match_parent" android:background="@color/black"
+                    android:layout_height="40dp">
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/gunahistory_rv"
+                        android:layout_marginRight="60dp"
+                        android:layout_centerVertical="true"
+                         android:nestedScrollingEnabled="false"
+                       android:background="@color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                    </androidx.recyclerview.widget.RecyclerView>
+                    <ImageView android:layout_alignParentRight="true"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:gravity="center" android:layout_centerVertical="true"
+                        android:layout_marginRight="4dp"
+                        android:layout_marginLeft="4dp"
+                        android:background="@color/black"
+                        android:layout_gravity="end"
+                        android:src="@drawable/refresh_img"/>
+
+                </RelativeLayout>
+
+
+
+                <RelativeLayout android:id="@+id/gif_rl"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+                    <pl.droidsonroids.gif.GifImageView
+                        android:id="@+id/ivthree"
+                        android:scaleType="fitXY"
+                        android:layout_gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_220sdp"
+                        android:src="@drawable/das_gifnew" />
+                    <TextView android:visibility="gone"
+                        android:id="@+id/flew_tv"
+                        android:layout_centerInParent="true"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textSize="35sp" android:textAllCaps="true"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/montbold"
+                        android:textAlignment="center"
+                        android:text="Flew Away"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/game_number_tv"
+                        android:layout_centerInParent="true"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:maxLength="4"
+                        android:textSize="55sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/montbold"
+                        android:textAlignment="center"
+                        android:text=""
+                        android:textColor="@color/white" />
+                    <TextView
+                        android:id="@+id/x_value"
+                        android:layout_toRightOf="@+id/game_number_tv"
+                        android:layout_centerInParent="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="50sp"
+                        android:text="x"
+                        android:textColor="@color/white" />
+                </RelativeLayout>
+
+
+                <androidx.cardview.widget.CardView android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp">
+                    <com.smarteist.autoimageslider.SliderLayout
+                        android:id="@+id/imageSlider"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                </androidx.cardview.widget.CardView>
+                <RelativeLayout android:background="@drawable/side_nav_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView android:id="@+id/blink_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"  android:padding="12dp"
+                        android:textAllCaps="true"
+                        android:text="Add Bet Before Game Start.."
+                        android:textColor="@color/white"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+                    <TextView android:id="@+id/timerTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_height="wrap_content"
+                        android:gravity="center" android:padding="12dp"
+                        android:textAllCaps="true"
+                        android:text="20.5" android:visibility="gone"
+                        android:textColor="@color/white"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/first_ll"
+                    android:background="@drawable/back_orange"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:weightSum="2">
+                    <LinearLayout
+                        android:padding="5dp"
+                        android:layout_width="180dp" android:orientation="vertical"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_marginBottom="10dp"
+                            android:padding="5dp" android:backgroundTint="#CC282828"
+                            android:text="BET" android:background="@drawable/back_red_sqare"
+                            android:textColor="@color/white"
+                            android:textSize="11dp"
+                            android:textStyle="bold" />
+                        <LinearLayout android:backgroundTint="#262424"
+                            android:background="@drawable/buttn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <ImageView
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:src="@drawable/ic_minus"
+                                android:padding="6dp"
+                                android:id="@+id/iv_minus"
+                                android:background="@drawable/grey_border_circle"/>
+                            <EditText
+                                android:background="@drawable/background"
+
+                                android:padding="2dp"
+                                android:gravity="center"
+                                android:layout_width="50dp"
+                                android:layout_height="wrap_content"
+                                android:text="1"
+                                android:textStyle="bold"
+                                android:maxLength="4"
+                                android:id="@+id/tv_qty"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:textSize="15dp"
+                                android:textColor="@color/white"
+                                />
+                            <ImageView
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:src="@drawable/ic_add"
+                                android:padding="6dp"
+                                android:id="@+id/iv_add"
+                                android:background="@drawable/grey_border_circle"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_marginTop="5dp"
+                            android:layout_width="match_parent"
+                            android:weightSum="3"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:id="@+id/tvOne"
+                                android:padding="5dp"
+                                android:textStyle="bold"
+                                android:textColor="@color/white"
+                                android:textSize="11dp"
+                                android:text="₹ 100"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"/>
+                            <TextView
+                                android:id="@+id/tvtwo"
+                                android:padding="5dp"
+                                android:textStyle="bold"
+                                android:textColor="@color/white"
+                                android:textSize="11dp"
+                                android:text="₹ 200"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"/>
+                            <TextView android:id="@+id/tvthree"
+                                android:padding="5dp"
+                                android:textStyle="bold"
+                                android:textColor="@color/white"
+                                android:textSize="11dp"
+                                android:text="₹ 500"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"/>
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_marginTop="2dp"
+                            android:layout_width="match_parent"
+                            android:weightSum="3"
+                            android:layout_height="wrap_content">
+                            <TextView android:id="@+id/tvfour"
+                                android:padding="5dp"
+                                android:textStyle="bold"
+                                android:textColor="@color/white"
+                                android:textSize="11dp"
+                                android:text="₹ 1000"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"/>
+                            <TextView
+                                android:id="@+id/ntvfive"
+                                android:padding="5dp"
+                                android:textStyle="bold"
+                                android:textColor="@color/white"
+                                android:textSize="11dp"
+                                android:text="₹ 5000"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"/>
+
+                            <TextView android:id="@+id/ntvsix"
+                                android:padding="5dp"
+                                android:textStyle="bold"
+                                android:textColor="@color/white"
+                                android:textSize="11dp"
+                                android:text="₹ 9999"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"/>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                      <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ImageView android:id="@+id/add_layout_img"
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_gravity="end"
+                            android:layout_margin="5dp"
+                            android:padding="5dp"
+                           android:src="@drawable/ic_baseline_playlist_add_circle_24"/>
+
+                          <RelativeLayout
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content">
+                              <LinearLayout  android:id="@+id/bet_ll"
+                                  android:layout_marginRight="10dp"
+                                  android:layout_marginLeft="10dp"
+                                  android:background="@drawable/drawer_green"
+                                  android:gravity="center_vertical"
+                                  android:padding="10dp"
+                                  android:layout_gravity="center_vertical"
+                                  android:orientation="vertical"
+                                  android:layout_width="match_parent"
+                                  android:layout_height="wrap_content">
+                                  <TextView
+                                      android:layout_gravity="center"
+                                      android:layout_width="match_parent"
+                                      android:layout_height="wrap_content"
+                                      android:gravity="center"
+                                      android:textSize="18sp"
+                                      android:textAlignment="center"
+                                      android:text="Bet"
+                                      android:textStyle="bold"
+                                      android:textColor="@color/white" />
+                                  <TextView android:id="@+id/tvTotalll"
+                                      android:layout_gravity="center"
+                                      android:layout_width="match_parent"
+                                      android:layout_height="wrap_content"
+                                      android:gravity="center"
+                                      android:textStyle="bold"
+                                      android:textSize="20dp"
+                                      android:textAlignment="center"
+                                      android:text="1.00"
+                                      android:textColor="@color/white" />
+                              </LinearLayout>
+
+
+
+                              <LinearLayout android:id="@+id/cancel_bet_ll"  android:visibility="gone"
+                                  android:layout_marginRight="10dp"
+                                  android:layout_marginLeft="10dp"
+                                  android:gravity="center_vertical"
+                                  android:padding="10dp"  android:layout_marginBottom="10dp"
+                                  android:layout_gravity="center_vertical"
+                                  android:orientation="vertical"
+                                  android:layout_width="match_parent"
+                                  android:layout_height="wrap_content">
+                                  <TextView
+                                      android:layout_width="match_parent"
+                                      android:layout_height="wrap_content"
+                                      android:gravity="center"
+                                      android:textAllCaps="true"
+                                      android:layout_marginBottom="5dp"
+                                      android:text="Waiting for next round"
+                                      android:textColor="@color/red"
+                                      android:textSize="10dp"/>
+
+                                  <TextView android:background="@drawable/circular_grey_bordersolid"
+                                      android:layout_gravity="center"
+                                      android:layout_width="match_parent"
+                                      android:layout_height="wrap_content"
+                                      android:gravity="center"
+                                      android:textSize="18dp"
+                                      android:textAlignment="center"
+                                      android:text="Waiting.."
+                                      android:padding="12dp"
+                                      android:textStyle="bold"
+                                      android:textColor="@color/white" />
+                              </LinearLayout>
+
+
+                              <LinearLayout android:id="@+id/withdraw_bet_ll"  android:visibility="gone"
+                                  android:layout_marginRight="10dp"
+                                  android:layout_marginLeft="10dp"
+                                  android:layout_marginBottom="10dp"
+                                  android:gravity="center_vertical"
+                                  android:padding="10dp" android:background="@drawable/drawer_orange"
+                                  android:layout_gravity="center_vertical"
+                                  android:orientation="vertical"
+                                  android:layout_width="match_parent"
+                                  android:layout_height="wrap_content">
+                                  <TextView
+                                      android:layout_width="match_parent"
+                                      android:layout_height="wrap_content"
+                                      android:gravity="center" android:visibility="invisible"
+                                      android:textAllCaps="true"
+                                      android:layout_marginBottom="5dp"
+                                      android:text="Waiting for next round"
+                                      android:textColor="@color/red"
+                                      android:textSize="10dp"/>
+                                  <TextView
+                                      android:layout_gravity="center"
+                                      android:layout_width="match_parent"
+                                      android:layout_height="wrap_content"
+                                      android:gravity="center"
+                                      android:textSize="19sp"
+                                      android:background="#EA9D2C"
+                                      android:textAlignment="center"
+                                      android:text="Cash Out"
+                                      android:textStyle="bold" android:textAllCaps="true"
+                                      android:textColor="@color/white" />
+
+                                  <LinearLayout
+                                      android:layout_gravity="center_horizontal"
+                                      android:layout_width="match_parent"
+                                      android:gravity="center_horizontal"
+                                      android:orientation="horizontal"
+                                      android:layout_height="wrap_content">
+                                      <TextView android:id="@+id/withdraw_tv"
+                                          android:layout_gravity="center"
+                                          android:layout_width="wrap_content"
+                                          android:layout_height="wrap_content"
+                                          android:gravity="center"
+                                          android:textSize="18sp"
+                                          android:textAlignment="center"
+                                          android:text="Waiting."
+                                          android:maxLength="7" android:padding="2dp"
+                                          android:textStyle="bold"
+                                          android:textColor="@color/white" />
+                                      <TextView
+                                      android:layout_gravity="center"
+                                      android:layout_width="wrap_content"
+                                      android:layout_height="wrap_content"
+                                      android:gravity="center"
+                                      android:textSize="18sp"
+                                      android:textAlignment="center"
+                                      android:text=" INR"
+                                      android:maxLength="7" android:padding="2dp"
+                                      android:textStyle="bold"
+                                      android:textColor="@color/white" />
+                                  </LinearLayout>
+
+
+                              </LinearLayout>
+
+                          </RelativeLayout>
+                  </LinearLayout>
+
+                </LinearLayout>
+
+
+
+
+                <LinearLayout
+                    android:id="@+id/two_ll"
+                    android:background="@drawable/back_orange"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:weightSum="2">
+                    <LinearLayout
+                        android:padding="5dp"
+                        android:layout_width="180dp" android:orientation="vertical"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_marginBottom="10dp"
+                            android:padding="5dp" android:backgroundTint="#CC282828"
+                            android:text="Bet" android:background="@drawable/back_red_sqare"
+                            android:textColor="@color/white"
+                            android:textSize="11dp"
+                            android:textStyle="bold" />
+                        <LinearLayout android:backgroundTint="#262424"
+                            android:background="@drawable/buttn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <ImageView
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:src="@drawable/ic_minus"
+                                android:padding="6dp"
+                                android:id="@+id/iv_minus1"
+                                android:background="@drawable/grey_border_circle"/>
+                            <EditText
+                                android:background="@drawable/background"
+
+                                android:padding="2dp"
+                                android:gravity="center"
+                                android:layout_width="50dp"
+                                android:layout_height="wrap_content"
+                                android:text="1"
+                                android:textStyle="bold"
+                                android:maxLength="4"
+                                android:id="@+id/tv_qty1"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:textSize="15dp"
+                                android:textColor="@color/white"
+                                />
+                            <ImageView
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:src="@drawable/ic_add"
+                                android:padding="6dp"
+                                android:id="@+id/iv_add1"
+                                android:background="@drawable/grey_border_circle"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_marginTop="5dp"
+                            android:layout_width="match_parent"
+                            android:weightSum="3"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:id="@+id/tvOne1"
+                                android:padding="5dp"
+                                android:textStyle="bold"
+                                android:textColor="@color/white"
+                                android:textSize="11dp"
+                                android:text="₹ 100"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"/>
+                            <TextView
+                                android:id="@+id/tvtwo1"
+                                android:padding="5dp"
+                                android:textStyle="bold"
+                                android:textColor="@color/white"
+                                android:textSize="11dp"
+                                android:text="₹ 200"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"/>
+                            <TextView android:id="@+id/tvthree1"
+                                android:padding="5dp"
+                                android:textStyle="bold"
+                                android:textColor="@color/white"
+                                android:textSize="11dp"
+                                android:text="₹ 500"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"/>
+
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_marginTop="2dp"
+                            android:layout_width="match_parent"
+                            android:weightSum="3"
+                            android:layout_height="wrap_content">
+                            <TextView android:id="@+id/tvfour1"
+                                android:padding="5dp"
+                                android:textStyle="bold"
+                                android:textColor="@color/white"
+                                android:textSize="11dp"
+                                android:text="₹ 1000"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"/>
+                            <TextView
+                                android:id="@+id/tvfive1"
+                                android:padding="5dp"
+                                android:textStyle="bold"
+                                android:textColor="@color/white"
+                                android:textSize="11dp"
+                                android:text="₹ 5000"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"/>
+
+                            <TextView android:id="@+id/tvsix1"
+                                android:padding="5dp"
+                                android:textStyle="bold"
+                                android:textColor="@color/white"
+                                android:textSize="11dp"
+                                android:text="₹ 9999"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ImageView android:id="@+id/minus_layout_img"
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_gravity="end"
+                            android:layout_margin="5dp"
+                            android:padding="5dp" android:visibility="invisible"
+                            android:src="@drawable/ic_baseline_playlist_add_circle_24"/>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <LinearLayout  android:id="@+id/bet_ll1"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginLeft="10dp"
+                                android:background="@drawable/drawer_green"
+                                android:gravity="center_vertical"
+                                android:padding="10dp"
+                                android:layout_gravity="center_vertical"
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:layout_gravity="center"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:textSize="18sp"
+                                    android:textAlignment="center"
+                                    android:text="Bet"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/white" />
+                                <TextView android:id="@+id/tvTotalll1"
+                                    android:layout_gravity="center"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:textStyle="bold"
+                                    android:textSize="20dp"
+                                    android:textAlignment="center"
+                                    android:text="1.00"
+                                    android:textColor="@color/white" />
+                            </LinearLayout>
+
+
+
+                            <LinearLayout android:id="@+id/cancel_bet_ll1"  android:visibility="gone"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginLeft="10dp"
+                                android:gravity="center_vertical"
+                                android:padding="10dp"  android:layout_marginBottom="10dp"
+                                android:layout_gravity="center_vertical"
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:textAllCaps="true"
+                                    android:layout_marginBottom="5dp"
+                                    android:text="Waiting for next round"
+                                    android:textColor="@color/red"
+                                    android:textSize="10dp"/>
+
+                                <TextView android:background="@drawable/circular_grey_bordersolid"
+                                    android:layout_gravity="center"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:textSize="18dp"
+                                    android:textAlignment="center"
+                                    android:text="Waiting.."
+                                    android:padding="12dp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/white" />
+                            </LinearLayout>
+
+
+                            <LinearLayout android:id="@+id/withdraw_bet_ll1"  android:visibility="gone"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:gravity="center_vertical"
+                                android:padding="10dp" android:background="@drawable/drawer_orange"
+                                android:layout_gravity="center_vertical"
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center" android:visibility="invisible"
+                                    android:textAllCaps="true"
+                                    android:layout_marginBottom="5dp"
+                                    android:text="Waiting for next round"
+                                    android:textColor="@color/red"
+                                    android:textSize="10dp"/>
+                                <TextView
+                                    android:layout_gravity="center"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:textSize="19sp"
+                                    android:background="#EA9D2C"
+                                    android:textAlignment="center"
+                                    android:text="Cash Out"
+                                    android:textStyle="bold" android:textAllCaps="true"
+                                    android:textColor="@color/white" />
+
+                                <LinearLayout
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_width="match_parent"
+                                    android:gravity="center_horizontal"
+                                    android:orientation="horizontal"
+                                    android:layout_height="wrap_content">
+                                    <TextView android:id="@+id/withdraw_tv1"
+                                        android:layout_gravity="center"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:textSize="18sp"
+                                        android:textAlignment="center"
+                                        android:text="Waiting."
+                                        android:maxLength="7" android:padding="2dp"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/white" />
+                                    <TextView
+                                        android:layout_gravity="center"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:textSize="18sp"
+                                        android:textAlignment="center"
+                                        android:text=" INR"
+                                        android:maxLength="7" android:padding="2dp"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/white" />
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_margin="5dp"
+                    android:background="@color/black"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+                        <TextView android:id="@+id/all_bets_tv"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:padding="5dp"
+                            android:text="All Bets" android:background="@drawable/back_red"
+                            android:textColor="@color/white"
+                            android:textSize="11dp"
+                            android:textStyle="bold" />
+                        <TextView android:layout_marginRight="10dp" android:id="@+id/my_bets_tv"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_marginBottom="10dp"
+                            android:padding="5dp"
+                            android:text="My Bets" android:background="@drawable/back_grey"
+                            android:textColor="@color/white"
+                            android:textSize="11dp"
+                            android:textStyle="bold" />
+                        <TextView android:id="@+id/top_tv"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:padding="5dp"
+                            android:text="Top" android:background="@drawable/back_grey"
+                            android:textColor="@color/white"
+                            android:textSize="11dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:id="@+id/all_bets_ll"
+                        android:layout_width="match_parent"
+
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:background="@color/Parrotgreen"
+                            android:textAllCaps="true"
+                            android:text="HUGS WINS BIGGEST WINS MULTIPLIERS"
+                            android:textColor="@color/white"
+                            android:textSize="14dp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:gravity="start"
+                            android:background="@color/Parrotgreen"
+                            android:padding="5dp"
+                            android:textAllCaps="true"
+                            android:text="All Bets"
+                            android:textColor="@color/white"
+                            android:textSize="14dp"
+                            android:textStyle="bold" />
+                        <TextView android:id="@+id/userTv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:gravity="center" android:drawablePadding="10dp"
+                            android:layout_gravity="center_horizontal"
+                            android:background="@color/Parrotgreen"
+                            android:drawableTint="@color/white"
+                            android:drawableStart="@drawable/ic_user"
+                            android:textAllCaps="true"
+                            android:text=""
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                        <LinearLayout android:layout_marginTop="10dp"
+                            android:background="#CC100F0F"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tvRecord"
+                            android:weightSum="4">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:text="Customer Id"
+                                android:textColor="@color/white"
+                                android:textSize="11sp"                            android:textStyle="bold" />
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:text="Bet,INR"
+                                android:textColor="@color/white"
+                                android:textSize="11sp"                            android:textStyle="bold" />
+                            <TextView
+                                android:visibility="gone"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:text="Player Type"
+                                android:textColor="@color/white"
+                                android:textSize="11sp"                            android:textStyle="bold" />
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:text="Gunna(x)" android:textSize="11sp"
+                                android:textColor="@color/white"
+                                android:textStyle="bold" />
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:padding="5dp" android:textSize="11sp"
+                                android:text="Cash out,INR"
+                                android:textColor="@color/white"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/all_bets_rv"
+                                android:layout_marginBottom="10dp" android:nestedScrollingEnabled="false"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                            </androidx.recyclerview.widget.RecyclerView>
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <LinearLayout android:visibility="gone"
+                        android:orientation="vertical"
+                        android:id="@+id/my_bets_ll"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView android:id="@+id/userTv1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:gravity="center" android:drawablePadding="10dp"
+                            android:layout_gravity="center_horizontal"
+                            android:background="@color/Parrotgreen"
+                            android:drawableTint="@color/white"
+                            android:drawableStart="@drawable/ic_user"
+                            android:textAllCaps="true"
+                            android:text="785"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                        <LinearLayout android:layout_marginTop="10dp"
+                            android:id="@+id/llTwo" android:background="#CC100F0F"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tvRecord"
+                            android:weightSum="3">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:text="Bet,INR"
+                                android:textColor="@color/white"
+                                android:textSize="11sp"                            android:textStyle="bold" />
+                            <TextView
+                                android:visibility="gone"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:text="Player Type"
+                                android:textColor="@color/white"
+                                android:textSize="11sp"                            android:textStyle="bold" />
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:text="Result" android:textSize="11sp"
+                                android:textColor="@color/white"
+                                android:textStyle="bold" />
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:padding="5dp" android:textSize="11sp"
+                                android:text="Cash out,INR"
+                                android:textColor="@color/white"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                        <androidx.recyclerview.widget.RecyclerView android:id="@+id/my_bets_rv"
+                            android:layout_marginBottom="10dp" android:nestedScrollingEnabled="false"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                        </androidx.recyclerview.widget.RecyclerView>
+                    </LinearLayout>
+
+
+
+                    <LinearLayout android:visibility="gone"
+                        android:orientation="vertical"
+                        android:id="@+id/top_ll"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView android:id="@+id/userTv2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:gravity="center" android:drawablePadding="10dp"
+                            android:layout_gravity="center_horizontal"
+                            android:background="@color/Parrotgreen"
+                            android:drawableTint="@color/white"
+                            android:drawableStart="@drawable/ic_user"
+                            android:textAllCaps="true"
+                            android:text=""
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                        <LinearLayout android:layout_marginTop="10dp"
+                             android:background="#CC100F0F"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tvRecord"
+                            android:weightSum="4">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:text="Customer Id"
+                                android:textColor="@color/white"
+                                android:textSize="11sp"                            android:textStyle="bold" />
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:text="BET,INR"
+                                android:textColor="@color/white"
+                                android:textSize="11sp"                            android:textStyle="bold" />
+                            <TextView
+                                android:visibility="gone"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:text="Player Type"
+                                android:textColor="@color/white"
+                                android:textSize="11sp"                            android:textStyle="bold" />
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:text="Result" android:textSize="11sp"
+                                android:textColor="@color/white"
+                                android:textStyle="bold" />
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:padding="5dp" android:textSize="11sp"
+                                android:text="Cash out,INR"
+                                android:textColor="@color/white"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/top_rv"
+                            android:layout_marginBottom="10dp" android:nestedScrollingEnabled="false"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                        </androidx.recyclerview.widget.RecyclerView>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+<!--    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>-->
+</LinearLayout>

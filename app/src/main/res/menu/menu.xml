@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/dth" android:iconTint="@color/white"
+        android:title="Aviator" />
+
+    <item
+        android:id="@+id/account" android:iconTint="@color/white"
+        android:icon="@drawable/ic_associate"
+        android:title="Account" />
+
+
+    <item
+        android:id="@+id/back" android:iconTint="@color/white"
+        android:icon="@drawable/back"
+        android:title="Back" />
+
+</menu>

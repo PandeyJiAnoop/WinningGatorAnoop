@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_back">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_gravity="center_vertical"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_centerInParent="true"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:padding="10dp"
+                    android:id="@+id/staic"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_100sdp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/logo"/>
+
+                <LinearLayout android:id="@+id/start_ll"
+                    android:layout_below="@+id/staic"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:background="@drawable/card"
+                    android:layout_height="460dp">
+                    <TextView
+                        android:layout_gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:textAlignment="center"
+                        android:text="Try new game Winning 24*7 &amp;\nGet your Bonus"
+                        android:layout_marginTop="20dp"
+                        android:textColor="@color/white" />
+
+
+                    <LinearLayout
+                        android:gravity="center_vertical"
+                        android:layout_gravity="center_vertical"
+                        android:orientation="vertical"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:textSize="45sp"
+                            android:textAlignment="center"
+                            android:text="200 %"
+                            android:textColor="@color/Metallicgold" />
+                        <TextView
+                            android:layout_gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:textSize="45sp"
+                            android:textAlignment="center"
+                            android:text="Bonus"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:layout_gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:layout_marginTop="5dp"
+                            android:textSize="24sp"
+                            android:padding="5dp"
+                            android:textAlignment="center"
+                            android:text="on 1st Deposit"
+                            android:textColor="@color/white" />
+                        <TextView
+                            android:layout_gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:layout_marginTop="5dp"
+                            android:textSize="30sp"
+                            android:padding="5dp"
+                            android:textAlignment="center"
+                            android:text="upto 20,000 INR"
+                            android:textColor="@color/white" />
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/login_btn" android:layout_margin="@dimen/_10sdp"
+                            android:layout_width="@dimen/_150sdp"
+                            android:layout_gravity="center"
+                            android:layout_height="60dp" android:backgroundTint="@color/red"
+                            android:background="@drawable/btn"
+                            android:text="Sign In"
+                            android:textSize="22dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/white"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+    <!--    <androidx.core.widget.NestedScrollView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent">-->
+
+    <!--        <RelativeLayout-->
+    <!--            android:orientation="vertical"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="match_parent">-->
+    <!--            -->
+
+    <!--           -->
+
+    <!--        </RelativeLayout>-->
+
+    <!--    </androidx.core.widget.NestedScrollView>-->
+
+
+</RelativeLayout>
+
